@@ -20,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useEffect, useState } from "react";
+import SidebarOptions from "./SidebarOptions";
 
 interface RoomDocument extends DocumentData {
   createdAt: string;
@@ -97,8 +98,11 @@ const Sidebar = () => {
               My Documents
             </h2>
             {groupedData.owner.map((doc) => (
-              <p>{doc.roomId}</p>
-              // <SidebarOptions key={doc.id} id={doc.id} href={`/doc/${doc.id}`} />
+              <SidebarOptions
+                key={doc.id}
+                id={doc.id}
+                href={`/doc/${doc.id}`}
+              />
             ))}
           </>
         )}
