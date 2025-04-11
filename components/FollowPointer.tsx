@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import StringToColor from "@/lib/StringToColor";
+import stringToColor from "@/lib/stringToColor";
 
 function FollowPointer({
   x,
@@ -10,7 +10,7 @@ function FollowPointer({
   y: number;
   info: { name: string; email: string; avatar: string };
 }) {
-  const color = StringToColor(info.email || "1");
+  const color = stringToColor(info.email || "1");
 
   return (
     <motion.div
