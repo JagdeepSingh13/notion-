@@ -8,10 +8,10 @@ import { useCollection } from "react-firebase-hooks/firestore";
 function useOwner() {
   const { user } = useUser();
   const room = useRoom();
-  const [isOwner, setIsOwner] = useState(false);
   const [usersInRoom] = useCollection(
     user && query(collectionGroup(db, "rooms"), where("roomId", "==", room.id))
   );
+  const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
     if (usersInRoom?.docs && usersInRoom.docs.length > 0) {
