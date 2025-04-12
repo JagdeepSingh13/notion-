@@ -33,7 +33,7 @@ function DeleteDocument() {
         router.replace("/");
         toast.success("Room Deleted successfully");
       } else {
-        toast.error(" Failed to delete room ");
+        toast.error("Failed to delete room ");
       }
     });
   };
