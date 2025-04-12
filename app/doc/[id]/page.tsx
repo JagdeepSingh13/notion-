@@ -1,20 +1,13 @@
-"use client";
+import DocumentPageClient from "./page1";
 
-import Document from "@/components/Document";
-
-const DocumentPage = ({
-  params: { id },
+const DocumentPage = async ({
+  params,
 }: {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }) => {
-  // console.log(id);
-  return (
-    <div className="flex flex-col flex-1 min-h-screen">
-      <Document id={id} />
-    </div>
-  );
+  const { id } = await params; // Resolve the params Promise
+
+  return <DocumentPageClient id={id} />;
 };
 
 export default DocumentPage;
